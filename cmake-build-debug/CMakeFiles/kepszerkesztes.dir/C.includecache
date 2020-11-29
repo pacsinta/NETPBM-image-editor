@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/debugmalloc.h
+stdbool.h
+-
+stddef.h
+-
+stdlib.h
+-
+stdio.h
+-
+ctype.h
+-
+string.h
+-
+stdarg.h
+-
+process.h
+-
+unistd.h
+-
+
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/image.h
+
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/imageReading.c
+imageReading.h
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/imageReading.h
+stdio.h
+-
+string.h
+-
+debugmalloc.h
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/debugmalloc.h
+
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/imageReading.h
+image.h
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/image.h
+stdio.h
+-
+

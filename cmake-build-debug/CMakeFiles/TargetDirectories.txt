@@ -1,0 +1,3 @@
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/cmake-build-debug/CMakeFiles/kepszerkesztes.dir
+C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/cmake-build-debug/CMakeFiles/rebuild_cache.dir

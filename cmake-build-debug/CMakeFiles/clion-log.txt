@@ -1,0 +1,4 @@
+"D:\Programs\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\csipa\Documents\Projects\School\Prog1\NHz1\kepszerkesztes
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/csipa/Documents/Projects/School/Prog1/NHz1/kepszerkesztes/cmake-build-debug
