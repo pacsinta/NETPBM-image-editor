@@ -1,3 +1,3 @@
 # NETPBM-image-editor
 
-BME Programozás alapjai nagy házi feladat.
+BME Programozás alapjai 1 nagy házi feladat.
