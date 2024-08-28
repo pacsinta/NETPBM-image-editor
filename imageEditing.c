@@ -1,7 +1,7 @@
 #include "imageEditing.h"
 #include "debugmalloc.h"
 
-//Ellenõrzi, hogy egy pixel ne legyen kisebb 0-nál és ne legyen nagyobb a maximum megengedett értéknél
+//Ellenï¿½rzi, hogy egy pixel ne legyen kisebb 0-nï¿½l ï¿½s ne legyen nagyobb a maximum megengedett ï¿½rtï¿½knï¿½l
 int tulcsordulasVedelem(int x, int maxVal) {
     if (x < 0) {
         return 0;
@@ -24,7 +24,7 @@ void fenyerovaltoztatas(Img* img, int fenyero) {
 
 void contrastvaltoztatas(Img* img, int contrast) {
     if(contrast>300 || contrast<-300){
-        printf("Tul nagy/kicsi kontrasztérték");
+        printf("Too big contrast value");
         return;
     }
 
@@ -100,61 +100,61 @@ void blur(Img* img, int count) {
                 {
                     for (int a = 0; a < radius * 2 + 1; a++)
                     {
-                        //Fent van tulcsordulás
+                        //Fent van tulcsordulï¿½s
                         if (i - radius + z < 0) {
-                            //Balra van túlcsordulás
+                            //Balra van tï¿½lcsordulï¿½s
                             if (x - radius + a < 0) {
                                 sum[0] += img->pixels[0][0].r;
                                 sum[1] += img->pixels[0][0].g;
                                 sum[2] += img->pixels[0][0].b;
                             }
-                            //Jobbra van túlcsordulás
+                            //Jobbra van tï¿½lcsordulï¿½s
                             else if (x - radius + a >= img->width) {
                                 sum[0] += img->pixels[0][img->width - 1].r;
                                 sum[1] += img->pixels[0][img->width - 1].g;
                                 sum[2] += img->pixels[0][img->width - 1].b;
                             }
-                            //Oldalt nincs túlcsordulás
+                            //Oldalt nincs tï¿½lcsordulï¿½s
                             else {
                                 sum[0] += img->pixels[0][x - radius + a].r;
                                 sum[1] += img->pixels[0][x - radius + a].g;
                                 sum[2] += img->pixels[0][x - radius + a].b;
                             }
                         }
-                        //Lent van túlcsordulás
+                        //Lent van tï¿½lcsordulï¿½s
                         else if (i - radius + z >= img->height) {
-                            //Balra van túlcsordulás
+                            //Balra van tï¿½lcsordulï¿½s
                             if (x - radius + a < 0) {
                                 sum[0] += img->pixels[img->height - 1][0].r;
                                 sum[1] += img->pixels[img->height - 1][0].g;
                                 sum[2] += img->pixels[img->height - 1][0].b;
                             }
-                            //Jobbra van túlcsordulás
+                            //Jobbra van tï¿½lcsordulï¿½s
                             else if (x - radius + a >= img->width) {
                                 sum[0] += img->pixels[img->height - 1][img->width - 1].r;
                                 sum[1] += img->pixels[img->height - 1][img->width - 1].g;
                                 sum[2] += img->pixels[img->height - 1][img->width - 1].b;
                             }
-                            //Oldalt nincs túlcsordulás
+                            //Oldalt nincs tï¿½lcsordulï¿½s
                             else {
                                 sum[0] += img->pixels[img->height - 1][x - radius + a].r;
                                 sum[1] += img->pixels[img->height - 1][x - radius + a].g;
                                 sum[2] += img->pixels[img->height - 1][x - radius + a].b;
                             }
                         }
-                        //Csak balra van túlcsordulás
+                        //Csak balra van tï¿½lcsordulï¿½s
                         else if (x - radius + a < 0) {
                             sum[0] += img->pixels[i - radius + z][0].r;
                             sum[1] += img->pixels[i - radius + z][0].g;
                             sum[2] += img->pixels[i - radius + z][0].b;
                         }
-                        //Csak jobbra van túlcsordulás
+                        //Csak jobbra van tï¿½lcsordulï¿½s
                         else if (x - radius + a >= img->width) {
                             sum[0] += img->pixels[i - radius + z][img->width - 1].r;
                             sum[1] += img->pixels[i - radius + z][img->width - 1].g;
                             sum[2] += img->pixels[i - radius + z][img->width - 1].b;
                         }
-                        //Nincs túlcsordulás
+                        //Nincs tï¿½lcsordulï¿½s
                         else {
                             sum[0] += img->pixels[i - radius + z][x - radius + a].r;
                             sum[1] += img->pixels[i - radius + z][x - radius + a].g;

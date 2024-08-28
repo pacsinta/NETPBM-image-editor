@@ -5,7 +5,7 @@
 
 
 int main() {
-    printf("Add meg a kepfajl helyet: ");
+    printf("Open a NETBPM image: ");
     char img_location[2048];
     scanf("%s", img_location);
 
@@ -17,8 +17,8 @@ int main() {
             int utasitas = 0;
             int runAgain = 0;
             do {
-                printf("Add meg az utasitas szamat:  \n");
-                printf("1: fenyerovaltoztatas, 2: kontrasztnoveles, 3: elmosas, 4: elfekete-feherites, 5: binaris keppe valo atalakitas, 6: mentes, 7: kilepes, 8: uj kep megnyitasa \n");
+                printf("Choose form the following options:  \n");
+                printf("1: edit brightness, 2: change contrast, 3: add blur, 4: grayscale, 5: make the image binary black&white, 6: save, 7: exit, 8: open a new image \n");
 
                 scanf("%d", &utasitas);
                 switch (utasitas) {
@@ -26,38 +26,38 @@ int main() {
                         break;
                     }
                     case 1: {
-                        printf("Add meg a fenyero nagysagat (+-%d): ", img->maxValue);
+                        printf("Set the brightness value (+-%d): ", img->maxValue);
                         int brightness = 0;
                         scanf("%d", &brightness);
                         fenyerovaltoztatas(img, brightness);
                         break;
                     }
                     case 2: {
-                        printf("Add meg a contrast nagysagat: (+- 300)");
+                        printf("Set the contrast value: (+- 300)");
                         int contrast = 0;
                         scanf("%d", &contrast);
                         contrastvaltoztatas(img, contrast);
                         break;
                     }
                     case 3: {
-                        printf("Add meg az elmosas merteket: ");
+                        printf("Set the blur value: ");
                         int x = 0;
                         scanf("%d", &x);
                         blur(img, x);
                         break;
                     }
                     case 4: {
-                        printf("Elfeketefeherites \n");
+                        printf("Making the grayscale image \n");
                         grayscale(img);
                         break;
                     }
                     case 5: {
-                        printf("Binaris keppe valo atalakitas \n");
+                        printf("Making the black&white image \n");
                         convertToBinaryImage(img);
                         break;
                     }
                     case 6: {
-                        printf("Add meg az uj kep nevet: \n");
+                        printf("Set the new image name: \n");
                         char name[2048];
                         scanf("%s", name);
                         mentes(img, name);
@@ -79,7 +79,7 @@ int main() {
         }
 
         if(exit == 0){
-            printf("Add meg a kepfajl helyet: ");
+            printf("Set the image location: ");
             scanf("%s", img_location);
         }
     }

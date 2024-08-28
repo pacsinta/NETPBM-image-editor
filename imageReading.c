@@ -3,7 +3,7 @@
 #include <string.h>
 #include "debugmalloc.h"
 
-//Kiírja a paraméterként megadott kép pixeleinek rgb értékét egy paraméterként megadott file-ba. (lehet az stdout-is)
+//Kiï¿½rja a paramï¿½terkï¿½nt megadott kï¿½p pixeleinek rgb ï¿½rtï¿½kï¿½t egy paramï¿½terkï¿½nt megadott file-ba. (lehet az stdout-is)
 void printImgData(Img* img, FILE* fp) {
     if(img->width < MaxLineSize * 7){
         for (int i = 0; i < img->height; i++)
@@ -13,7 +13,7 @@ void printImgData(Img* img, FILE* fp) {
                 fprintf(fp, " ");
 
                 if(img->type == PBM_BINARY || img->type == PBM_ASCII){
-                    //.pbm esetén 0 a fehér, és 1 a fekete
+                    //.pbm esetï¿½n 0 a fehï¿½r, ï¿½s 1 a fekete
                     fprintf(fp, "%d", img->pixels[i][j].r == 0 ? 1 : 0);
                 }else{
                     fprintf(fp, "%d", img->pixels[i][j].r);
@@ -34,7 +34,7 @@ void printImgData(Img* img, FILE* fp) {
             fprintf(fp, " ");
 
             if(img->type == PBM_BINARY || img->type == PBM_ASCII){
-                //.pbm esetén 0 a fehér, és 1 a fekete
+                //.pbm esetï¿½n 0 a fehï¿½r, ï¿½s 1 a fekete
                 fprintf(fp, "%d", img->pixels[i][j].r == 0 ? 1 : 0);
             }else{
                 fprintf(fp, "%d", img->pixels[i][j].r);
@@ -57,7 +57,7 @@ void printImgData(Img* img, FILE* fp) {
     }
 }
 
-//Elmenti a képet egy paraméterként megadott névvel, aminek a fajl kiterjesztése, és a kép adata a paraméterként kapott Img változóban van benne
+//Elmenti a kï¿½pet egy paramï¿½terkï¿½nt megadott nï¿½vvel, aminek a fajl kiterjesztï¿½se, ï¿½s a kï¿½p adata a paramï¿½terkï¿½nt kapott Img vï¿½ltozï¿½ban van benne
 void mentes(Img* img, char* name) {
     char *newname = (char *)malloc(strlen(name)+5*sizeof(char));
     strcpy(newname, name);
@@ -99,7 +99,7 @@ void mentes(Img* img, char* name) {
     fclose(fp);
     free(newname);
 }
-//Megnézi, hogy egy sor komment e
+//Megnï¿½zi, hogy egy sor komment e
 int testComment(char *buff){
     for (int i = 0; i < strlen(buff); ++i) {
         if (buff[i] == '#') {
@@ -109,7 +109,7 @@ int testComment(char *buff){
     return 0;
 }
 
-//Egy PBM file tulajdonságait tölti be.
+//Egy PBM file tulajdonsï¿½gait tï¿½lti be.
 void readHEADERPBM(FILE* fp, Img* img) {
     char* buff = (char*)malloc(MaxLineSize * sizeof(char));
 
@@ -127,7 +127,7 @@ void readHEADERPBM(FILE* fp, Img* img) {
     free(buff);
     img->maxValue = 1;
 }
-//Egy PPM/PGM file tulajdonságait tölti be.
+//Egy PPM/PGM file tulajdonsï¿½gait tï¿½lti be.
 void readHEADERPPMPGM(FILE* fp, Img* img) {
     char* buff = (char*)malloc(MaxLineSize * sizeof(char));
     fgets(buff, MaxLineSize, fp);
@@ -151,7 +151,7 @@ void readHEADERPPMPGM(FILE* fp, Img* img) {
     free(buff);
 }
 
-//Egy ascii formátumú PBM/PGM file pixeleinek adatait tölti be.
+//Egy ascii formï¿½tumï¿½ PBM/PGM file pixeleinek adatait tï¿½lti be.
 void readPBMPGM(FILE *fp, Img* img) {
     
     if (img->type == PBM_ASCII) {
@@ -170,8 +170,8 @@ void readPBMPGM(FILE *fp, Img* img) {
             break;
         }
         if(img->type==PBM_ASCII){
-            //.pbm esetén 0 a fehér, és 1 a fekete
-            //Ellentétes a .pgm- és a .ppm- el
+            //.pbm esetï¿½n 0 a fehï¿½r, ï¿½s 1 a fekete
+            //Ellentï¿½tes a .pgm- ï¿½s a .ppm- el
             color = color == 0 ? 1 : 0;
         }
         img->pixels[h][w].r = color;
@@ -185,7 +185,7 @@ void readPBMPGM(FILE *fp, Img* img) {
         }
     }
 }
-//Egy ascii formátumú PPM file pixeleinek adatait tölti be.
+//Egy ascii formï¿½tumï¿½ PPM file pixeleinek adatait tï¿½lti be.
 void readPPM(FILE* fp, Img* img) {
     readHEADERPPMPGM(fp, img);
 
@@ -209,7 +209,7 @@ void readPPM(FILE* fp, Img* img) {
     }
 }
 
-//Egy bináris formátumú PBM file pixeleinek adatait tölti be.
+//Egy binï¿½ris formï¿½tumï¿½ PBM file pixeleinek adatait tï¿½lti be.
 void readPBMBinary(FILE* fp, Img* img) {
     readHEADERPBM(fp, img);
     allocImg(img);
@@ -238,7 +238,7 @@ void readPBMBinary(FILE* fp, Img* img) {
         }
     }
 }
-//Egy bináris formátumú PGM file pixeleinek adatait tölti be.
+//Egy binï¿½ris formï¿½tumï¿½ PGM file pixeleinek adatait tï¿½lti be.
 void readPGMBinary(FILE* fp, Img* img) {
     readHEADERPPMPGM(fp, img);
     allocImg(img);
@@ -261,7 +261,7 @@ void readPGMBinary(FILE* fp, Img* img) {
 
     free(buff2);
 }
-//Egy bináris formátumú PPM file pixeleinek adatait tölti be.
+//Egy binï¿½ris formï¿½tumï¿½ PPM file pixeleinek adatait tï¿½lti be.
 void readPPMBinary(FILE* fp, Img* img) {
     readHEADERPPMPGM(fp, img);
     allocImg(img);
@@ -284,7 +284,7 @@ void readPPMBinary(FILE* fp, Img* img) {
     free(buff2);
 }
 
-//beolvas egy képet egy paraméterként megadott helyrõl, majd elmenti a paraméterként megadott pointerbe
+//beolvas egy kï¿½pet egy paramï¿½terkï¿½nt megadott helyrï¿½l, majd elmenti a paramï¿½terkï¿½nt megadott pointerbe
 int readImg(char* img_location, Img* img) {
     FILE* fp;
     fp = fopen(img_location, "rt");
@@ -292,7 +292,7 @@ int readImg(char* img_location, Img* img) {
 
     if (fp != NULL) {
 
-        //Kép tulajdonságainak betöltése
+        //Kï¿½p tulajdonsï¿½gainak betï¿½ltï¿½se
         char* buff = (char*)malloc(3 * sizeof(char));
         fgets(buff, 3, fp);
 
@@ -341,7 +341,7 @@ int readImg(char* img_location, Img* img) {
         return 1;
     }
     else {
-        printf("Nem lehet megnyitni a kepet! \n");
+        printf("Can not open the image! \n");
         img = NULL;
         return 0;
     }
